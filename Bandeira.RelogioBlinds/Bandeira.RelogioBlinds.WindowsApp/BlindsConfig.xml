@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Configuracao>
+  <Fichas>
+    <Ficha Valor="5" Cor="Branco" />
+    <Ficha Valor="10" Cor="Vermelho" />
+    <Ficha Valor="25" Cor="Verde" />
+    <Ficha Valor="50" Cor="Azul" />
+    <Ficha Valor="100" Cor="Preto" />
+  </Fichas>
+  <NiveisBlind>
+    <Nivel Tempo="1" SB="5" BB="10" />
+    <Nivel Tempo="1" SB="10" BB="20" />  
+    <Nivel Tempo="1" SB="15" BB="30" />
+    <Nivel Tempo="1" SB="20" BB="40" Anti="5"  />
+    <Nivel Tempo="1" SB="30" BB="60" Anti="5"  />
+    <Nivel Tempo="1" SB="35" BB="70" Anti="5"  />
+    <Nivel Tempo="1" SB="50" BB="100" Anti="5"  />
+    <Nivel Tempo="1" SB="60" BB="120" Anti="5"  />
+    <Nivel Tempo="1" SB="75" BB="150" Anti="5"  />
+    <Nivel Tempo="1" SB="100" BB="200" Anti="5"  />
+    <Nivel Tempo="1" SB="125" BB="250" Anti="5"  />
+    <Nivel Tempo="1" SB="150" BB="300" Anti="5"  />
+    <Nivel Tempo="1" SB="200" BB="400" Anti="5"  />
+    <Break Tempo="1" Msg="Break para trocar 1as fichas" />  
+  </NiveisBlind>
+</Configuracao>
