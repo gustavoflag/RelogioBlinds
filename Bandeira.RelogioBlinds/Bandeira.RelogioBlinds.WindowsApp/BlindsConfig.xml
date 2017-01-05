@@ -1,26 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <Configuracao>
   <Fichas>
-    <Ficha Valor="5" Cor="Branco" />
-    <Ficha Valor="10" Cor="Vermelho" />
-    <Ficha Valor="25" Cor="Verde" />
-    <Ficha Valor="50" Cor="Azul" />
-    <Ficha Valor="100" Cor="Preto" />
+    <Ficha Valor="25" Cor="Branco" NumeroCor="#FFFFFF"  />
+    <Ficha Valor="100" Cor="Vermelho" NumeroCor="#FF0000" />
+    <Ficha Valor="500" Cor="Verde" NumeroCor="#00FF00" />
+    <Ficha Valor="1000" Cor="Azul" NumeroCor="#0000FF" />
+    <Ficha Valor="5000" Cor="Preto" NumeroCor="#000000" />
+    <Ficha Valor="10000" Cor="Cinza" NumeroCor="#0C0C0C" />
   </Fichas>
   <NiveisBlind>
-    <Nivel Tempo="1" SB="5" BB="10" />
-    <Nivel Tempo="1" SB="10" BB="20" />  
-    <Nivel Tempo="1" SB="15" BB="30" />
-    <Nivel Tempo="1" SB="20" BB="40" Anti="5"  />
-    <Nivel Tempo="1" SB="30" BB="60" Anti="5"  />
-    <Nivel Tempo="1" SB="35" BB="70" Anti="5"  />
-    <Nivel Tempo="1" SB="50" BB="100" Anti="5"  />
-    <Nivel Tempo="1" SB="60" BB="120" Anti="5"  />
-    <Nivel Tempo="1" SB="75" BB="150" Anti="5"  />
-    <Nivel Tempo="1" SB="100" BB="200" Anti="5"  />
-    <Nivel Tempo="1" SB="125" BB="250" Anti="5"  />
-    <Nivel Tempo="1" SB="150" BB="300" Anti="5"  />
-    <Nivel Tempo="1" SB="200" BB="400" Anti="5"  />
-    <Break Tempo="1" Msg="Break para trocar 1as fichas" />  
+    <Nivel Tempo="20" SB="25" BB="50" />
+    <Nivel Tempo="20" SB="50" BB="100" />
+    <Nivel Tempo="20" SB="75" BB="150" />
+    <Nivel Tempo="20" SB="100" BB="200" Anti="25" Msg="Último nível com rebuy" />
+    <Nivel Tempo="15" SB="200" BB="400" Anti="25" />
+    <Nivel Tempo="15" SB="300" BB="600" Anti="50" />
+    <Nivel Tempo="15" SB="400" BB="800" Anti="50" />
+    <Break Tempo="10" Msg="Break para trocar fichas de 25" />
+    <Nivel Tempo="15" SB="500" BB="1000" Anti="100" />
+    <Nivel Tempo="10" SB="600" BB="1200" Anti="100" />
+    <Nivel Tempo="10" SB="800" BB="1600" Anti="100" />
+    <Nivel Tempo="10" SB="1000" BB="2000" Anti="200" />
+    <Nivel Tempo="10" SB="1500" BB="3000" Anti="300" />
+    <Nivel Tempo="10" SB="2000" BB="4000" Anti="400" />
+    <Break Tempo="10" Msg="Break para trocar fichas de 100" />
+    <Nivel Tempo="10" SB="2500" BB="5000" Anti="500" />
+    <Nivel Tempo="10" SB="3000" BB="6000" Anti="500" />
+    <Nivel Tempo="10" SB="4000" BB="8000" Anti="500" />
+    <Nivel Tempo="10" SB="5000" BB="10000" Anti="1000" /> 
   </NiveisBlind>
 </Configuracao>

@@ -19,8 +19,8 @@ namespace Bandeira.RelogioBlinds.Business
         public byte[] ImagemBigBlind
         { get; set; }
 
-        public Nivel(int numero, TimeSpan tempo, int anti, int smallBlind, int bigBlind, byte[] imagemSmallBlind = null, byte[] imagemBigBlind = null)
-            : base(numero, tempo)
+        public Nivel(int numero, TimeSpan tempo, int anti, int smallBlind, int bigBlind, string mensagem, byte[] imagemSmallBlind = null, byte[] imagemBigBlind = null)
+            : base(numero, tempo, mensagem)
         {
             this.Anti = anti;
             this.SmallBlind = smallBlind;
@@ -29,8 +29,8 @@ namespace Bandeira.RelogioBlinds.Business
             this.ImagemBigBlind = imagemBigBlind;
         }
 
-        public Nivel(int numero, int minutos, int anti, int smallBlind, int bigBlind, byte[] imagemSmallBlind = null, byte[] imagemBigBlind = null)
-            : base(numero, minutos)
+        public Nivel(int numero, int minutos, int anti, int smallBlind, int bigBlind, string mensagem, byte[] imagemSmallBlind = null, byte[] imagemBigBlind = null)
+            : base(numero, minutos, mensagem)
         {
             this.Anti = anti;
             this.SmallBlind = smallBlind;
@@ -41,7 +41,14 @@ namespace Bandeira.RelogioBlinds.Business
 
         public override string ToString()
         {
-            return string.Format("Nivel {0} - SB: {1} - BB: {2} - Anti: {3}", this.Numero, this.SmallBlind, this.BigBlind, this.Anti);
+            string blind = string.Format("{0} - {1}", this.SmallBlind, this.BigBlind);
+
+            if (this.Anti > 0)
+            {
+                blind = string.Format("{0} Anti: {1}", blind, this.Anti);
+            }
+
+            return blind;
         }
     }
 }

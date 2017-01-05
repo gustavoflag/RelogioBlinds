@@ -65,22 +65,24 @@ namespace Bandeira.RelogioBlinds.Business
                             string bb = reader.GetAttribute("BB") ?? "0";
                             string anti = reader.GetAttribute("Anti") ?? "0";
                             string tempo = reader.GetAttribute("Tempo") ?? "0";
+                            string msg = reader.GetAttribute("Msg") ?? "";
 
-                            Niveis.Add(new Nivel(i++, int.Parse(tempo), int.Parse(anti), int.Parse(sb), int.Parse(bb)));
+                            Niveis.Add(new Nivel(i++, int.Parse(tempo), int.Parse(anti), int.Parse(sb), int.Parse(bb), msg));
                             break;
 
                         case "Break":
-                            string msg = reader.GetAttribute("Msg") ?? "";
+                            string msgBreak = reader.GetAttribute("Msg") ?? "";
                             string tempoBreak = reader.GetAttribute("Tempo") ?? "0";
 
-                            Niveis.Add(new Break(i++, int.Parse(tempoBreak), msg));
+                            Niveis.Add(new Break(i++, int.Parse(tempoBreak), msgBreak));
                             break;
 
                         case "Ficha":
                             string valor = reader.GetAttribute("Valor") ?? "";
                             string cor = reader.GetAttribute("Cor") ?? "0";
+                            string numeroCor = reader.GetAttribute("NumeroCor") ?? "";
 
-                            Fichas.Add(new Ficha(int.Parse(valor), cor));
+                            Fichas.Add(new Ficha(int.Parse(valor), cor, numeroCor));
                             break;
                     }
                 }
@@ -91,12 +93,15 @@ namespace Bandeira.RelogioBlinds.Business
         {
             while (CurrentNivel != null)
             {
-                while (CurrentNivel != null && CurrentNivel.Tempo.Seconds >= 0)
+                while (CurrentNivel != null && CurrentNivel.Tempo.TotalSeconds >= 0)
                 {
+                    if (CurrentNivel.Tempo.TotalSeconds == 0)
+                    {
+                        NextNivel();
+                    }
+
                     CurrentNivel.Tick();
                 }
-
-                NextNivel();
             }
         }
 
@@ -211,6 +216,47 @@ namespace Bandeira.RelogioBlinds.Business
             }
 
             return sb.ToString();
+        }
+
+        public IList<Ficha> FichasBB
+        {
+            get
+            {
+                if (CurrentNivel is Nivel)
+                    return GetFichasByValor(((Nivel)CurrentNivel).BigBlind);
+                return null;
+            }
+        }
+
+        public IList<Ficha> FichasSB
+        {
+            get
+            {
+                if (CurrentNivel is Nivel)
+                    return GetFichasByValor(((Nivel)CurrentNivel).SmallBlind);
+                return null;
+            }
+        }
+
+        public IList<Ficha> FichasAnti
+        {
+            get
+            {
+                if (CurrentNivel is Nivel)
+                    return GetFichasByValor(((Nivel)CurrentNivel).Anti);
+                return null;
+            }
+        }
+
+        public string GetStringNextBlind()
+        {
+            if (CurrentNivelIndex + 1 >= Niveis.Count)
+                return "";
+
+            if (Niveis.ElementAt(CurrentNivelIndex + 1) is Break)
+                return "BREAK";
+
+            return Niveis.ElementAt(CurrentNivelIndex + 1).ToString();
         }
 
         public string GetStringFichasBB()

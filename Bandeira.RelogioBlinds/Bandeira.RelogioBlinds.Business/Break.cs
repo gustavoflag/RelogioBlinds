@@ -4,19 +4,14 @@ namespace Bandeira.RelogioBlinds.Business
 {
     public class Break : NivelBase
     {
-        public string Mensagem
-        { get; set; }
-
         public Break(int numero, TimeSpan tempo, string mensagem)
-            : base(numero, tempo)
+            : base(numero, tempo, mensagem)
         {
-            this.Mensagem = mensagem;
         }
 
         public Break(int numero, int minutos, string mensagem)
-            : base(numero, minutos)
+            : base(numero, minutos, mensagem)
         {
-            this.Mensagem = mensagem;
         }
 
         public override string ToString()
