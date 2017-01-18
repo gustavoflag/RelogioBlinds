@@ -20,6 +20,7 @@ namespace Bandeira.RelogioBlinds.WindowsApp
         {
             timer1.Start();
             btnStop.Enabled = true;
+            lblRelogio.ForeColor = Color.White;
             btnLast.Enabled = true;
             btnNext.Enabled = true;
             btnStart.Enabled = false;
@@ -30,6 +31,7 @@ namespace Bandeira.RelogioBlinds.WindowsApp
         {
             //timer1.Stop();
             btnStop.Enabled = false;
+            lblRelogio.ForeColor = Color.Gray;
             btnStart.Enabled = true;
             relogioBlinds.Stop();
         }
@@ -193,8 +195,8 @@ namespace Bandeira.RelogioBlinds.WindowsApp
             }
             else
             {
-                this.BackColor = Color.LightGray;
-                this.ForeColor = Color.Black;
+                this.BackColor = Color.Black;
+                this.ForeColor = Color.White;
             }
         }
 
@@ -233,6 +235,11 @@ namespace Bandeira.RelogioBlinds.WindowsApp
             lblAnti3.Visible = false;
             lblAnti4.Visible = false;
             lblAnti5.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

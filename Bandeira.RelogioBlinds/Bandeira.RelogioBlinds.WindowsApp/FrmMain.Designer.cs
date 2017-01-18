@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnStart = new System.Windows.Forms.Button();
             this.lblRelogio = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -65,12 +66,16 @@
             this.lbl10BB = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStart
             // 
             this.btnStart.BackColor = System.Drawing.Color.Chartreuse;
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnStart.Location = new System.Drawing.Point(483, 389);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(43, 33);
@@ -111,6 +116,7 @@
             // 
             this.btnNext.Enabled = false;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnNext.Location = new System.Drawing.Point(532, 389);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(43, 33);
@@ -123,6 +129,7 @@
             // 
             this.btnLast.Enabled = false;
             this.btnLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLast.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnLast.Location = new System.Drawing.Point(385, 389);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(43, 33);
@@ -136,6 +143,7 @@
             this.btnStop.BackColor = System.Drawing.Color.OrangeRed;
             this.btnStop.Enabled = false;
             this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStop.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnStop.Location = new System.Drawing.Point(434, 389);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(43, 33);
@@ -358,7 +366,7 @@
             // 
             this.lblProx.AutoSize = true;
             this.lblProx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProx.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblProx.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lblProx.Location = new System.Drawing.Point(741, 172);
             this.lblProx.Name = "lblProx";
             this.lblProx.Size = new System.Drawing.Size(90, 25);
@@ -368,7 +376,7 @@
             // lblProximoBlind
             // 
             this.lblProximoBlind.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProximoBlind.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblProximoBlind.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lblProximoBlind.Location = new System.Drawing.Point(640, 206);
             this.lblProximoBlind.Name = "lblProximoBlind";
             this.lblProximoBlind.Size = new System.Drawing.Size(292, 101);
@@ -380,7 +388,7 @@
             // 
             this.lbl3BB.AutoSize = true;
             this.lbl3BB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3BB.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbl3BB.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl3BB.Location = new System.Drawing.Point(66, 172);
             this.lbl3BB.Name = "lbl3BB";
             this.lbl3BB.Size = new System.Drawing.Size(58, 25);
@@ -390,7 +398,7 @@
             // lblValor3xBB
             // 
             this.lblValor3xBB.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor3xBB.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblValor3xBB.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lblValor3xBB.Location = new System.Drawing.Point(32, 197);
             this.lblValor3xBB.Name = "lblValor3xBB";
             this.lblValor3xBB.Size = new System.Drawing.Size(134, 40);
@@ -401,7 +409,7 @@
             // lblValor10xBB
             // 
             this.lblValor10xBB.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor10xBB.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblValor10xBB.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lblValor10xBB.Location = new System.Drawing.Point(158, 197);
             this.lblValor10xBB.Name = "lblValor10xBB";
             this.lblValor10xBB.Size = new System.Drawing.Size(138, 40);
@@ -413,7 +421,7 @@
             // 
             this.lbl10BB.AutoSize = true;
             this.lbl10BB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl10BB.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbl10BB.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl10BB.Location = new System.Drawing.Point(191, 172);
             this.lbl10BB.Name = "lbl10BB";
             this.lbl10BB.Size = new System.Drawing.Size(70, 25);
@@ -423,7 +431,7 @@
             // lblNumero
             // 
             this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumero.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblNumero.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lblNumero.Location = new System.Drawing.Point(-3, 33);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(101, 60);
@@ -435,18 +443,44 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 29);
             this.label1.TabIndex = 42;
             this.label1.Text = "Nivel";
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(840, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(92, 88);
+            this.panel1.TabIndex = 43;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.MenuText;
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(49, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(43, 33);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.WindowText;
             this.ClientSize = new System.Drawing.Size(944, 426);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.lblValor10xBB);
@@ -482,10 +516,16 @@
             this.Controls.Add(this.lblRelogio);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblValorBB);
+            this.ForeColor = System.Drawing.SystemColors.Control;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmMain";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Relogio Blinds TQSOP";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,6 +569,8 @@
         private System.Windows.Forms.Label lbl10BB;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
