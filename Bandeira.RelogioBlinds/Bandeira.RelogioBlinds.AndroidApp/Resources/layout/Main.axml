@@ -1,13 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<Button  
-    android:id="@+id/MyButton"
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/Hello"
-    />
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout1">
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/linearLayout2">
+        <TextView
+            p1:text="00:00"
+            p1:textAppearance="?android:attr/textAppearanceLarge"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/textView1"
+            p1:gravity="center"
+            p1:textSize="@android:dimen/notification_large_icon_height" />
+        <LinearLayout
+            p1:orientation="vertical"
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/linearLayout6">
+            <LinearLayout
+                p1:orientation="horizontal"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/linearLayout7">
+                <TextView
+                    p1:text="Small Blind"
+                    p1:textAppearance="?android:attr/textAppearanceSmall"
+                    p1:layout_width="107.5dp"
+                    p1:layout_height="match_parent"
+                    p1:id="@+id/textView4"
+                    p1:layout_marginLeft="10px"
+                    p1:textColor="@android:color/darker_gray" />
+                <TextView
+                    p1:text="Big Blind"
+                    p1:textAppearance="?android:attr/textAppearanceSmall"
+                    p1:layout_width="match_parent"
+                    p1:layout_height="match_parent"
+                    p1:id="@+id/textView5"
+                    p1:gravity="right"
+                    p1:layout_marginRight="10px"
+                    p1:textColor="@android:color/darker_gray" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/linearLayout4">
+        <LinearLayout
+            p1:orientation="horizontal"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/linearLayout5">
+            <TextView
+                p1:text="SB"
+                p1:id="@+id/textView3"
+                p1:layout_width="115.0dp"
+                p1:layout_height="match_parent"
+                p1:layout_marginLeft="10px"
+                p1:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                p1:text="BB"
+                p1:id="@+id/textView2"
+                p1:layout_width="match_parent"
+                p1:layout_height="match_parent"
+                p1:gravity="right"
+                p1:layout_marginRight="10px"
+                p1:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
