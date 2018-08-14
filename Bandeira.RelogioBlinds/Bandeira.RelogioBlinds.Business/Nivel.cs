@@ -41,7 +41,7 @@ namespace Bandeira.RelogioBlinds.Business
 
         public override string ToString()
         {
-            string blind = string.Format("{0} - {1}", this.SmallBlind, this.BigBlind);
+            string blind = string.Format("{0} - {1}", this.SmallBlind.ToString("#,###").Replace("0.000", "0k"), this.BigBlind.ToString("#,###").Replace("0.000", "0k"));
 
             if (this.Anti > 0)
             {

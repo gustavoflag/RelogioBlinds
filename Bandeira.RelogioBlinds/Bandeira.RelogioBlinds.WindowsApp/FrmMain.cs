@@ -1,6 +1,7 @@
 ﻿using Bandeira.RelogioBlinds.Business;
 using System;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace Bandeira.RelogioBlinds.WindowsApp
@@ -9,11 +10,15 @@ namespace Bandeira.RelogioBlinds.WindowsApp
     {
         Relogio relogioBlinds;
 
+        System.Media.SoundPlayer finishSoundPlayer;
+
+
         public FrmMain()
         {
             InitializeComponent();
 
             relogioBlinds = new Relogio("BlindsConfig.xml");
+            finishSoundPlayer = new System.Media.SoundPlayer("Gongo.wav");
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -56,11 +61,11 @@ namespace Bandeira.RelogioBlinds.WindowsApp
 
             if (current is Nivel)
             {
-                lblValorSB.Text = ((Nivel)current).SmallBlind.ToString();
-                lblValorBB.Text = ((Nivel)current).BigBlind.ToString();
-                lblValorAnti.Text = ((Nivel)current).Anti.ToString();
-                lblValor3xBB.Text = (((Nivel)current).BigBlind * 3).ToString();
-                lblValor10xBB.Text = (((Nivel)current).BigBlind * 10).ToString();
+                lblValorSB.Text = ((Nivel)current).SmallBlind.ToString("#,###").Replace("0.000", "0k");
+                lblValorBB.Text = ((Nivel)current).BigBlind.ToString("#,###").Replace("0.000", "0k");
+                lblValorAnti.Text = ((Nivel)current).Anti.ToString("#,###").Replace("0.000", "0k");
+                lblValor3xBB.Text = (((Nivel)current).BigBlind * 3).ToString("#,###").Replace("0.000", "0k");
+                lblValor10xBB.Text = (((Nivel)current).BigBlind * 10).ToString("#,###").Replace("0.000", "0k");
 
                 lblValor3xBB.Visible = true;
                 lbl3BB.Visible = true;
@@ -197,12 +202,19 @@ namespace Bandeira.RelogioBlinds.WindowsApp
             {
                 this.BackColor = Color.Black;
                 this.ForeColor = Color.White;
+                this.lblRelogio.ForeColor = Color.FromArgb(255, 255, 128);
             }
+
+            if (relogioBlinds.GetCurrentNivel() != null && relogioBlinds.GetCurrentNivel().AtLastSecond)
+            {
+                finishSoundPlayer.Play();
+            }
+
         }
 
         private void ExibeFicha(Label lbl, Ficha ficha)
         {
-            lbl.Text = ficha.Valor.ToString();
+            /*lbl.Text = ficha.Valor.ToString();
             lbl.BackColor = ColorTranslator.FromHtml(ficha.NumeroCor);
             lbl.Visible = true;
 
@@ -213,7 +225,7 @@ namespace Bandeira.RelogioBlinds.WindowsApp
             else
             {
                 lbl.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
-            }
+            }*/
         }
 
         private void limpaFichasBlind()

@@ -9,7 +9,7 @@
     <Ficha Valor="10000" Cor="Cinza" NumeroCor="#0C0C0C" />
   </Fichas>
   <NiveisBlind>
-    <Nivel Tempo="20" SB="25" BB="50" />
+    <Nivel Tempo="1" SB="25" BB="50" />
     <Nivel Tempo="20" SB="50" BB="100" />
     <Nivel Tempo="20" SB="75" BB="150" />
     <Nivel Tempo="20" SB="100" BB="200" Anti="25" Msg="Último nível com rebuy" />
@@ -27,6 +27,7 @@
     <Nivel Tempo="10" SB="2500" BB="5000" Anti="500" />
     <Nivel Tempo="10" SB="3000" BB="6000" Anti="500" />
     <Nivel Tempo="10" SB="4000" BB="8000" Anti="500" />
-    <Nivel Tempo="10" SB="5000" BB="10000" Anti="1000" /> 
+    <Nivel Tempo="10" SB="5000" BB="10000" Anti="1000" />
+    <Nivel Tempo="10" SB="10000" BB="20000" Anti="2000" />
   </NiveisBlind>
 </Configuracao>

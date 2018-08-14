@@ -43,6 +43,19 @@ namespace Bandeira.RelogioBlinds.Business
             }           
         }
 
+        public bool AtLastSecond
+        {
+            get
+            {
+                if (Tempo.TotalSeconds < 1)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
         public NivelBase(int numero, TimeSpan tempo)
             :this(numero, tempo, "")
         {
